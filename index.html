@@ -12,15 +12,26 @@
         <link rel="stylesheet" type="text/css" href="./css/FiraCode.css" />
         <link rel="stylesheet" type="text/css" href="./css/nutssss.css" />
         <link rel="icon" href="./favicon.ico" />
-        <script>
+       <script>
+
 function showIP(response) {
   document.getElementById("visitorIP").innerHTML = response.ip;
+}
+
+function showLocation(data) {
+  document.getElementById("visitorLocation").innerHTML = data.region + " " + data.city;
 }
 
 fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
   .then(data => showIP(data));
+
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => showLocation(data));
+
 </script>
+
     </head>
 
     <body>
@@ -108,7 +119,10 @@ fetch('https://api.ipify.org?format=json')
                         <span style="color: rgb(0, 190, 0)">root@</span>
                         <p>QQ 3282218569<br/>
                            微信 15753745830<br/>  </p>
-                           <p>您的IP是: <span id="visitorIP"></span></p> 
+                            <p>您的IP是: <span id="visitorIP"></span><br/></p>
+
+<p>您所在地区: <span id="visitorLocation"></span></p>
+
                         <span style="color: blue">~</span>
                     </div>
                 </div>
