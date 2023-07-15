@@ -12,21 +12,21 @@
         <link rel="stylesheet" type="text/css" href="./css/FiraCode.css" />
         <link rel="stylesheet" type="text/css" href="./css/nutssss.css" />
         <link rel="icon" href="./favicon.ico" />
-       <script>
+      <script>
 
 function showIP(response) {
-  document.getElementById("visitorIP").innerHTML = response.ip;
+  document.getElementById("visitorIP").innerHTML = response.ip;  
 }
 
 function showLocation(data) {
-  document.getElementById("visitorLocation").innerHTML = data.region + " " + data.city;
+  document.getElementById("visitorLocation").innerHTML = data.province + " " + data.city;
 }
 
 fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
   .then(data => showIP(data));
 
-fetch('https://ipapi.co/json/')
+fetch('https://apis.map.qq.com/ws/location/v1/ip?key=YOUR_KEY') 
   .then(response => response.json())
   .then(data => showLocation(data));
 
