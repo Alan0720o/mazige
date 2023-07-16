@@ -13,21 +13,7 @@
         <link rel="stylesheet" type="text/css" href="./css/nutssss.css" />
         <link rel="icon" href="./favicon.ico" />
       <script>
-          <!-- 在头部添加代码 -->
-<script>
-// 初始化访问人数
-let userCount = localStorage.getItem('userCount'); 
-if(!userCount) {
-  userCount = 0;
-}
-
-// 增加用户计数
-userCount++;
-localStorage.setItem('userCount', userCount);
-
-// 显示用户计数
-document.getElementById('userCount').innerHTML = userCount;
-</script>
+       
 
 function showIP(response) {
   document.getElementById("visitorIP").innerHTML = response.ip;  
@@ -135,10 +121,7 @@ fetch('https://apis.map.qq.com/ws/location/v1/ip?key=N7MBZ-67IRI-CGAGY-UKYZV-2UN
                         <p>QQ 3282218569<br/>
                            微信 15753745830<br/>  </p>
                             <p>您的IP是: <span id="visitorIP"></span><br/></p>
-                        <p>
-  访问人数:<span id="userCount"></span>
-</p>
-
+                       
 
 
                         <span style="color: blue">~</span>
